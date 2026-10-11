@@ -1,0 +1,12 @@
+runA_mean_accuracy: 5.78203125
+runB_mean_accuracy: 5.572916666666667
+delta_mean_accuracy_B_minus_A: -0.20911458333333321
+runA_total_correct: 111
+runB_total_correct: 107
+delta_total_correct_B_minus_A: -4
+paired_run_B_higher_count: 21
+paired_run_A_higher_count: 25
+paired_run_tie_count: 18
+paired_delta_correct_counts: {-3: 4, -2: 6, -1: 15, 0: 18, 1: 13, 2: 2, 3: 6}
+runA_accuracy_values: {0.0: 8, 3.33: 14, 6.67: 32, 10.0: 7, 13.33: 3}
+runB_accuracy_values: {0.0: 10, 3.3333333333333335: 19, 6.666666666666667: 21, 10.0: 10, 13.333333333333334: 4}

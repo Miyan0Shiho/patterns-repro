@@ -1,0 +1,92 @@
+[
+ {
+  "mean_reflect": 117.75363825363826,
+  "acc": 51.52918032786885,
+  "prompt": "Standard",
+  "p_idx": 1
+ },
+ {
+  "mean_reflect": 119.025494276795,
+  "acc": 49.83887096774194,
+  "prompt": "Think.",
+  "p_idx": 2
+ },
+ {
+  "mean_reflect": 117.11798336798337,
+  "acc": 49.23491803278689,
+  "prompt": "Wait, think.",
+  "p_idx": 3
+ },
+ {
+  "mean_reflect": 115.40261780104711,
+  "acc": 50.9445,
+  "prompt": "Wait, wait. Think.",
+  "p_idx": 4
+ },
+ {
+  "mean_reflect": 120.29935622317596,
+  "acc": 48.90793103448276,
+  "prompt": "Think step by step.",
+  "p_idx": 5
+ },
+ {
+  "mean_reflect": 120.541928721174,
+  "acc": 49.16683333333334,
+  "prompt": "Think step-by-step.",
+  "p_idx": 6
+ },
+ {
+  "mean_reflect": 116.9443866943867,
+  "acc": 51.20213114754098,
+  "prompt": "Let's think step by step.",
+  "p_idx": 7
+ },
+ {
+  "mean_reflect": 117.3870116156283,
+  "acc": 50.65639344262295,
+  "prompt": "Let's think step-by-step.",
+  "p_idx": 8
+ },
+ {
+  "mean_reflect": 115.25845665961945,
+  "acc": 51.7483606557377,
+  "prompt": "Step by step, let's solve this.",
+  "p_idx": 9
+ },
+ {
+  "mean_reflect": 119.9818763326226,
+  "acc": 49.355322580645165,
+  "prompt": "Let's address this step by step.",
+  "p_idx": 10
+ },
+ {
+  "mean_reflect": 116.26781970649895,
+  "acc": 52.043225806451616,
+  "prompt": "Think this through step by step.",
+  "p_idx": 11
+ },
+ {
+  "mean_reflect": 119.91552990556139,
+  "acc": 51.666451612903224,
+  "prompt": "Let's approach this step by step.",
+  "p_idx": 12
+ },
+ {
+  "mean_reflect": 120.73605371900827,
+  "acc": 50.41703125000001,
+  "prompt": "Step by step, let's work through this.",
+  "p_idx": 13
+ },
+ {
+  "mean_reflect": 120.43846153846154,
+  "acc": 50.97446153846154,
+  "prompt": "Let's reason through this step by step.",
+  "p_idx": 14
+ },
+ {
+  "mean_reflect": 122.8928205128205,
+  "acc": 51.38476923076924,
+  "prompt": "Let's go through the process step by step.",
+  "p_idx": 15
+ }
+]

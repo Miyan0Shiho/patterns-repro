@@ -1,0 +1,2 @@
+model,runs,mean_accuracy,sample_std_accuracy,population_std_accuracy,total_correct_over_1920,pass_at_64_count,pass_at_64_accuracy,unique_correct_examples,pred_count,origin_has_term,origin_has_remember,origin_has_please,pred_has_boxed
+standard_baselineB,64,5.989583333333334,3.669776819475798,3.6409938117909513,115,9,30.0,aime2024_0;aime2024_1;aime2024_10;aime2024_12;aime2024_16;aime2024_2;aime2024_23;aime2024_8;aime2024_9,1920,0,1920,0,1853

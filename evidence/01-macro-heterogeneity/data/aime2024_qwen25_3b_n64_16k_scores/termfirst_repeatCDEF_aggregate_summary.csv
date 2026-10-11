@@ -1,0 +1,6 @@
+model,runs,mean_accuracy,sample_std_accuracy,total_correct_over_1920,pass_at_64_count,pass_at_64_accuracy,pred_count,origin_has_term,origin_has_remember,pred_has_boxed,remote_output_dir
+termfirst_repeatC,64,6.87515625,3.557778864880291,132,11,36.6666667,1920,0,1920,1873,/root/autodl-tmp/opencompass/outputs/aime2024_qwen25_3b_termfirst_oldconfig_repeatC_w16fixed_n64_16k_20260602_233846
+termfirst_repeatD,64,6.56328125,3.1969584030377947,126,7,23.3333333,1920,0,1920,1883,/root/autodl-tmp/opencompass/outputs/aime2024_qwen25_3b_termfirst_oldconfig_repeatD_w16_n64_16k_20260603_005259
+termfirst_repeatE,64,5.9375,3.2250000615233168,114,10,33.3333333,1920,0,1920,1890,/root/autodl-tmp/opencompass/outputs/aime2024_qwen25_3b_termfirst_oldconfig_repeatE_w16_n64_16k_20260603_020234
+termfirst_repeatF,64,4.9996875,3.029718918677189,96,7,23.3333333,1920,0,1920,1885,/root/autodl-tmp/opencompass/outputs/aime2024_qwen25_3b_termfirst_oldconfig_repeatF_w16_n64_16k_20260603_030316
+termfirst_repeatCDEF_pooled,256,6.09390625,3.317346030,468,,,7680,,,,C/D/E/F pooled across 256 runs

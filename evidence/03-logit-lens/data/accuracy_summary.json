@@ -1,0 +1,37 @@
+[
+  {
+    "q": "Q1_log",
+    "under_thinking": true,
+    "normal_thinking": true,
+    "over_thinking": true,
+    "term_first": true
+  },
+  {
+    "q": "Q2_geo",
+    "under_thinking": true,
+    "normal_thinking": true,
+    "over_thinking": true,
+    "term_first": true
+  },
+  {
+    "q": "Q3_nt",
+    "under_thinking": true,
+    "normal_thinking": true,
+    "over_thinking": true,
+    "term_first": false
+  },
+  {
+    "q": "Q4_comb",
+    "under_thinking": false,
+    "normal_thinking": false,
+    "over_thinking": false,
+    "term_first": false
+  },
+  {
+    "q": "Q5_alg",
+    "under_thinking": false,
+    "normal_thinking": false,
+    "over_thinking": false,
+    "term_first": false
+  }
+]

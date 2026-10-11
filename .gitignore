@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Rendered figures -- archived on Zenodo (see ZENODO.md)
+figures/
+paper/
+
+# Large raw artifacts -- archived on Zenodo (see ZENODO.md)
+archive/
+data_fig4/
+packages/
+*.tar.gz
+
+# Editorial backups
+*.bak
+*.bak-*

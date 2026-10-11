@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the archived version and the accompanying manuscript."
+title: "Reproduction package: prompt prefixes as hidden-state initialization in large language models"
+type: software
+authors:
+  - name: "Author identities withheld for peer review"
+version: 1.0.0-submission
+date-released: "2026-10-11"
+license: MIT
+repository-code: "https://github.com/PLACEHOLDER/repository"
+abstract: >-
+  Code and summary data that regenerate every figure and table of a manuscript
+  examining how zero-shot chain-of-thought prompt prefixes shape the hidden-state
+  trajectories of large language models. Large raw artifacts and rendered figures
+  are archived separately on Zenodo.
+keywords:
+  - chain-of-thought
+  - prompt engineering
+  - hidden states
+  - logit lens
+  - reproducibility

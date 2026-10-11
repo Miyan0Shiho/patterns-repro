@@ -1,0 +1,15 @@
+# Tested with Python 3.11.14 on macOS arm64.
+# Only the plotting path is required to regenerate figures from the included
+# summary data.
+matplotlib==3.11.2
+numpy==2.4.6
+Pillow==12.3.0
+# used by evidence/01-macro-heterogeneity/code/Fig4_AnswerHeatmap.py
+seaborn==0.13.2
+
+# Optional: required only to re-run the hidden-state extraction scripts
+# (evidence/02-state-divergence/code/real_logit_lens_extractor.py,
+#  evidence/02-state-divergence/code/extract_termfirst_logit_lens.py).
+# An MPS or CUDA device is required.
+# torch>=2.1
+# transformers>=4.40

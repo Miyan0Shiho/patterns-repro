@@ -1,0 +1,17 @@
+rank_by_mean,group,model,system_prompt,mean_accuracy,total_correct_over_1920,pass_at_64_count,pass_at_64_accuracy,pred_count,runs,source
+1,prompt15,CoTqwen2x5_3b_11,Let's approach this step by step.,6.71828125,129,11,36.666666666666664,1920,64,prompts15_aggregate_summary.csv
+2,baseline,standard,,6.51109375,125,12,40.0,1920,64,baseline_termfirst_aggregate_summary.csv
+3,prompt15,CoTqwen2x5_3b_13, Let's reason through this step by step.,6.4065625,123,10,33.33333333333333,1920,64,prompts15_aggregate_summary.csv
+4,prompt15,CoTqwen2x5_3b_7,Let's think step-by-step.,6.249375,120,12,40.0,1920,64,prompts15_aggregate_summary.csv
+5,prompt15,CoTqwen2x5_3b_9,Let's address this step by step.,6.14640625,118,11,36.666666666666664,1920,64,prompts15_aggregate_summary.csv
+6,prompt15,CoTqwen2x5_3b_8," Step by step, let's solve this.",6.1459375,118,11,36.666666666666664,1920,64,prompts15_aggregate_summary.csv
+7,prompt15,CoTqwen2x5_3b_1,Think.,6.0940625,117,9,30.0,1920,64,prompts15_aggregate_summary.csv
+8,prompt15,CoTqwen2x5_3b_6,Let's think step by step.,5.98984375,115,9,30.0,1920,64,prompts15_aggregate_summary.csv
+9,prompt15,CoTqwen2x5_3b_14,Let's go through the process step by step.,5.9378125,114,9,30.0,1920,64,prompts15_aggregate_summary.csv
+10,prompt15,CoTqwen2x5_3b_4,Think step by step.,5.88515625,113,8,26.666666666666668,1920,64,prompts15_aggregate_summary.csv
+11,prompt15,CoTqwen2x5_3b_2," Wait, think.",5.83375,112,12,40.0,1920,64,prompts15_aggregate_summary.csv
+12,prompt15,CoTqwen2x5_3b_5,Think step-by-step.,5.72859375,110,11,36.666666666666664,1920,64,prompts15_aggregate_summary.csv
+13,prompt15,CoTqwen2x5_3b_10, Think this through step by step.,5.676875,109,12,40.0,1920,64,prompts15_aggregate_summary.csv
+14,prompt15,CoTqwen2x5_3b_3," Wait, wait. Think.",5.5203125,106,10,33.33333333333333,1920,64,prompts15_aggregate_summary.csv
+15,prompt15,CoTqwen2x5_3b_12," Step by step, let's work through this.",5.46875,105,9,30.0,1920,64,prompts15_aggregate_summary.csv
+16,prompt15,CoTqwen2x5_3b_15,...,5.26046875,101,9,30.0,1920,64,prompts15_aggregate_summary.csv

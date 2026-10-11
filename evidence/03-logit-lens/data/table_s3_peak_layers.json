@@ -1,0 +1,127 @@
+{
+  "Premature convergence": {
+    "first_token_counts": {
+      "Alright": 5,
+      "Okay": 10
+    },
+    "peak_layer_by_first_token": {
+      "Alright": {
+        "27": 5
+      },
+      "Okay": {
+        "26": 10
+      }
+    },
+    "peak_layer_distribution": {
+      "26": 10,
+      "27": 5
+    },
+    "accuracy_n_correct": 2,
+    "accuracy_pct": 13.3,
+    "n_problems": 15,
+    "agreement_with_termfirst": {
+      "n_agree": 13,
+      "n_total": 15,
+      "pct": 86.7,
+      "same_first_token": {
+        "n_agree": 13,
+        "n_total": 13
+      },
+      "different_first_token": {
+        "n_agree": 0,
+        "n_total": 2
+      }
+    }
+  },
+  "Delayed commitment": {
+    "first_token_counts": {
+      "Alright": 4,
+      "Okay": 11
+    },
+    "peak_layer_by_first_token": {
+      "Alright": {
+        "27": 4
+      },
+      "Okay": {
+        "26": 10,
+        "27": 1
+      }
+    },
+    "peak_layer_distribution": {
+      "26": 10,
+      "27": 5
+    },
+    "accuracy_n_correct": 4,
+    "accuracy_pct": 26.7,
+    "n_problems": 15,
+    "agreement_with_termfirst": {
+      "n_agree": 7,
+      "n_total": 15,
+      "pct": 46.7,
+      "same_first_token": {
+        "n_agree": 6,
+        "n_total": 6
+      },
+      "different_first_token": {
+        "n_agree": 1,
+        "n_total": 9
+      }
+    }
+  },
+  "Persistent oscillation": {
+    "first_token_counts": {
+      "Alright": 7,
+      "Okay": 8
+    },
+    "peak_layer_by_first_token": {
+      "Alright": {
+        "27": 7
+      },
+      "Okay": {
+        "26": 7,
+        "27": 1
+      }
+    },
+    "peak_layer_distribution": {
+      "26": 7,
+      "27": 8
+    },
+    "accuracy_n_correct": 2,
+    "accuracy_pct": 13.3,
+    "n_problems": 15,
+    "agreement_with_termfirst": {
+      "n_agree": 6,
+      "n_total": 15,
+      "pct": 40.0,
+      "same_first_token": {
+        "n_agree": 5,
+        "n_total": 5
+      },
+      "different_first_token": {
+        "n_agree": 1,
+        "n_total": 10
+      }
+    }
+  },
+  "Term-first": {
+    "first_token_counts": {
+      "Alright": 5,
+      "Okay": 10
+    },
+    "peak_layer_by_first_token": {
+      "Alright": {
+        "27": 5
+      },
+      "Okay": {
+        "26": 10
+      }
+    },
+    "peak_layer_distribution": {
+      "26": 10,
+      "27": 5
+    },
+    "accuracy_n_correct": 3,
+    "accuracy_pct": 20.0,
+    "n_problems": 15
+  }
+}
