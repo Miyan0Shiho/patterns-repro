@@ -1,0 +1,13 @@
+task,run,accuracy,source
+GSM8K,1,84.5704,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+GSM8K,2,84.3046,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+GSM8K,3,84.6335,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+GSM8K,4,84.9998,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+MMLU,1,66.9977,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+MMLU,2,66.9977,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+MMLU,3,67.3179,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+MMLU,4,67.1745,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+HumanEval,1,70.7867,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+HumanEval,2,73.2944,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+HumanEval,3,70.8017,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)
+HumanEval,4,70.796,pre-computed from Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv (mean + std via np.random.normal)

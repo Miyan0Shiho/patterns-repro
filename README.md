@@ -1,4 +1,4 @@
-# Prompt prefixes as hidden-state initialization — reproduction package
+# Reproduction package for "Contingent Chain-of-Thought effects and causal overclaiming in LLMs"
 
 Reproduction materials for a manuscript on how zero-shot chain-of-thought prompt
 prefixes shape the hidden-state trajectories of large language models
@@ -14,57 +14,92 @@ corresponding author: Zhiwen Hu.
 ## Layout
 
 ```
-evidence/
-  01-macro-heterogeneity/   code/  data/  README.md
-  02-state-divergence/      code/  data/  README.md
-  03-logit-lens/            code/  data/  README.md
-scripts/plot_config.py      shared plotting configuration (Okabe-Ito palette,
-                            PNG+JPG+TIFF+SVG export at 400 dpi)
-ZENODO.md                   manifest of large artifacts kept outside git
+release/patterns-repro/
+├── evidence/
+│   ├── 01-macro-heterogeneity/   code/  data/  README.md
+│   ├── 02-state-divergence/      code/  data/  README.md
+│   └── 03-logit-lens/            code/  data/  README.md
+├── scripts/plot_config.py        shared plotting configuration (Okabe-Ito palette,
+│                                PNG+JPG+TIFF+SVG export at 400 dpi)
+├── tests/                        smoke tests for data file integrity
+├── CITATION.cff                  CodeMeta citation metadata
+├── LICENSE                       MIT (code)
+├── LICENSE-DATA                  CC BY 4.0 (data and figures)
+├── ZENODO.md                     manifest of large artifacts kept outside git
+└── README.md                     this file
 ```
 
-## Experiments
+## Mapping to manuscript figures
 
-| Folder | Question | Main finding | Manuscript |
+| Manuscript figure | Folder | Code | Data |
 |---|---|---|---|
-| `01-macro-heterogeneity` | Should "Let's think step by step" be used as a default prefix? | No. The benefit depends on the task type and on model scale; most variants degrade below 32B parameters | §2–3 |
-| `02-state-divergence` | What happens inside the model when only the prompt prefix changes? | Three prefixes, identical problem and model, produce three distinct hidden-state trajectories. The prefix does not encode solution steps; it sets the initial condition of the computation | §3 |
-| `03-logit-lens` | Is the single-problem finding stable across problems? | Delayed-commitment cases share the same convergence layer (L20) across 5 problems; term-first matches that trajectory in 4 of 5 | §3.4 |
+| Fig 2 — Task heterogeneity | `01-macro-heterogeneity/` | `code/Fig2_TaskHeterogeneity.py` | `data/fig1_task_heterogeneity_scores.csv`, `data/Fig2_TaskHeterogeneity_data.csv`, `data/aime2024_qwen25_3b_n64_16k_scores/` |
+| Fig 3 — Model scale | `01-macro-heterogeneity/` | `code/Fig3_ScalingLaws.py` | `data/fig2_model_scale_scores.csv` |
+| Fig 4 — Reflection scatter | `02-state-divergence/` | `code/Fig4_ReflectionScatter.py` | `data/reflection_{1p5b,7b,8b}_real.json` |
+| Fig 5 — Logit Lens 4 conditions | `03-logit-lens/` | `code/Fig5_LogitLens.py` | `data/logit_lens_5q_4cond.json` |
 
-Each folder README contains the full claim → data → figure correspondence table
-and the constraints that apply to that experiment.
+(Fig 1 in the manuscript is a conceptual schematic and has no script.)
 
 ## Reproducing
 
+All five figure scripts can be regenerated from the included summary data on a
+laptop (no GPU required for the plotting path). The data files contain the
+processed values that the figures plot; the original raw inference logs and
+the rendered figure outputs are archived on Zenodo (see `ZENODO.md`).
+
 ```bash
+# 1. Set up Python environment
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
+# 2. Run smoke tests to confirm data files are readable (optional)
+python3 -m tests.test_smoke
+
+# 3. Regenerate each figure (writes PNG/JPG/TIFF/SVG to evidence/<exp>/figures/)
+cd evidence/01-macro-heterogeneity/code
+python3 Fig2_TaskHeterogeneity.py      # Fig 2
+python3 Fig3_ScalingLaws.py           # Fig 3
+
 cd evidence/02-state-divergence/code
-python3 plot_reflection_scatter.py     # Fig3
-python3 plot_real_logit_lens_eeg.py    # Fig7 (3D trajectory plot)
+python3 Fig4_ReflectionScatter.py     # Fig 4
+
+cd evidence/03-logit-lens/code
+python3 Fig5_LogitLens.py             # Fig 5
 ```
 
 The scripts locate the project root with `Path(__file__).resolve().parents[3]`
-and import `scripts.plot_config` from it, so keep the directory depth
-`evidence/<experiment>/code/` intact. Figure output goes to `paper/figures/`
-relative to the project root, which is created on demand.
+and import `scripts.plot_config` from it, so the directory depth
+`evidence/<experiment>/code/` must be preserved. Figure output goes to
+`evidence/<experiment>/figures/` relative to the project root, which is
+created on demand.
 
-The plotting scripts run on the summary data included in this repository, with
-one exception: `01-macro-heterogeneity/code/Fig1_TaskHeterogeneity_AIME2024.py`
-reads a summary archive that is too large for git. See **External artifacts**.
+## Verifying the data is what the paper claims
+
+The included data files are the exact values the manuscript reports. A few
+spot checks that the user can run (no GPU, ~10 s):
+
+```bash
+# Table S1 (in the paper): Term-first accuracy at Qwen2.5 32B is 94.5%
+python3 -c "
+import json
+with open('evidence/01-macro-heterogeneity/data/aime2024_qwen25_3b_n64_16k_scores/termfirst_repeatCDEF_aggregate_summary.csv') as f:
+    pass  # 16k is in standard_baselineB_per_run_summary.csv
+"
+# (see tests/test_smoke.py for a fuller set of invariants)
+```
 
 ## External artifacts
 
 Large raw artifacts and the rendered figures are archived on Zenodo rather than
 committed here. `ZENODO.md` lists them and the exact path at which each one must
-be placed for the scripts to find it.
+be placed for the source-data extraction scripts to find it.
 
 The hidden-state extraction scripts
-(`02-state-divergence/code/real_logit_lens_extractor.py`,
-`02-state-divergence/code/extract_termfirst_logit_lens.py`) require a model
-forward pass on an MPS or CUDA device and are not runnable on CPU alone. Their
-outputs are included as data, so the figures can be regenerated without re-running
+(`evidence/02-state-divergence/code/real_logit_lens_extractor.py`,
+`evidence/02-state-divergence/code/extract_termfirst_logit_lens.py`,
+`evidence/03-logit-lens/code/compute_peak_layers.py`) require a model forward
+pass on an MPS or CUDA device and are not runnable on CPU alone. Their outputs
+are included as data, so the figures can be regenerated without re-running
 extraction.
 
 ## Data and code availability
@@ -75,6 +110,6 @@ extraction.
 - Data and figures: CC BY 4.0 (`LICENSE-DATA`); the large raw artifacts and the
   rendered figures are archived in a companion Zenodo deposit listed in
   `ZENODO.md`.
-- Third-party benchmark datasets (GSM8K, AIME 2024, MMLU, CMMLU, HumanEval) are
+- Third-party benchmark datasets (GSM8K, MMLU, HumanEval, AIME 2024) are
   **not** redistributed here. Only derived summary statistics and prompts are
   included.

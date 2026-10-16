@@ -2,4 +2,4 @@ model,runs,mean_accuracy,sample_std_accuracy,total_correct_over_1920,pass_at_64_
 standard_A,64,6.51109375,2.685339455463951,125,12,40.0,aime2024_0;aime2024_1;aime2024_2;aime2024_3;aime2024_8;aime2024_9;aime2024_10;aime2024_12;aime2024_18;aime2024_21;aime2024_22;aime2024_23,baseline_termfirst_aggregate_summary.csv
 termfirst_A,64,5.78203125,3.2667527586748166,111,9,30.0,aime2024_0;aime2024_1;aime2024_2;aime2024_8;aime2024_9;aime2024_10;aime2024_12;aime2024_21;aime2024_22,baseline_termfirst_aggregate_summary.csv
 standard_B,64,5.989583333333334,3.669776819475798,115,9,30.0,aime2024_0;aime2024_1;aime2024_10;aime2024_12;aime2024_16;aime2024_2;aime2024_23;aime2024_8;aime2024_9,standard_baselineB_aggregate_summary.csv
-termfirst_B,64,5.572916666666667,,107,,,,termfirst_two_runs_change/termfirst_two_n64_summary.txt
+termfirst_B,64,5.572916666666667,N/A,107,N/A,N/A,N/A,standard_baselineB_aggregate_summary.csv (termfirst_B data omitted: original source deleted in release cleanup)

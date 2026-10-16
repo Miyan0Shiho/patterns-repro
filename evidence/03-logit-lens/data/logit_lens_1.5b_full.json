@@ -1,5 +1,5 @@
 {
-  "model": "/root/autodl-tmp/model/DeepSeek-R1-Distill-Qwen-1.5B",
+  "model": "[redacted-server-path]
   "num_questions": 15,
   "results": {
     "Q1": {

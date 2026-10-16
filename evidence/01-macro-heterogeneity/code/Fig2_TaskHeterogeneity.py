@@ -1,32 +1,32 @@
-"""Generate a Fig. 1 draft with AIME2024 replacing the original CMMLU panel.
+"""Generate Fig. 2 (paper numbering): task heterogeneity with AIME 2024 panel.
 
 Data provenance:
-- GSM8K/MMLU/HumanEval values are copied from the original
-  `Fig1_TaskHeterogeneity.py` script.
-- GSM8K/MMLU/HumanEval term-first values are recomputed from the backed-up
-  OpenCompass n=4 summary CSVs in
-  `backups/qwen25_3b_group48_full4_n4_20260528/`.
-- AIME2024 uses local aggregate CSVs produced from the Qwen2.5-3B-Instruct
-  n=64, 16k-token OpenCompass runs:
-  `workspace/aime2024_qwen25_3b_n64_16k_scores/standard_baselineB_aggregate_summary.csv`,
-  `workspace/aime2024_qwen25_3b_n64_16k_scores/termfirst_repeatCDEF_aggregate_summary.csv`,
-  and
-  `workspace/aime2024_qwen25_3b_n64_16k_scores/prompts15_aggregate_summary.csv`.
-- AIME2024 fields used: `mean_accuracy`, `sample_std_accuracy`, `runs`,
+- GSM8K/MMLU/HumanEval values are copied from the v4.5-era `Fig1_TaskHeterogeneity.py`
+  script (since removed from this repository as it relied on the earlier
+  3-panel layout that included CMMLU).
+- GSM8K/MMLU/HumanEval term-first values are from the strict group48 n=4 runs
+  (the same data underlying the original 3-panel figure).
+- AIME 2024 uses the included summary CSVs in
+  `data/aime2024_qwen25_3b_n64_16k_scores/`:
+  - `standard_baselineB_aggregate_summary.csv` (Standard, n=64)
+  - `termfirst_repeatCDEF_aggregate_summary.csv` (Term-first, pooled n=256
+    across 4 batches of 64)
+  - `prompts15_aggregate_summary.csv` (the 14 CoT variants, n=64 each)
+- AIME 2024 fields used: `mean_accuracy`, `sample_std_accuracy`, `runs`,
   `total_correct_over_1920`, and `pass_at_64_accuracy`.
-- The old term-first prompt is inserted into all four panels. AIME2024 uses
-  the original pooled experimental summary: Standard B (n=64) and term-first
-  pooled across the four repeated C-F batches (4 x 64, total n=256). The other
-  three panels read the backed-up strict group48 n=4 runs.
+- The term-first prompt is inserted into all four panels. AIME 2024 uses the
+  pooled experimental summary: Standard B (n=64) and term-first pooled across
+  the four repeated C-F batches (4 x 64, total n=256). The other three panels
+  read the strict group48 n=4 runs.
 - Error variants:
   - default: repeat-run standard deviation, matching the original script style.
-  - SEM: `sample_std_accuracy / sqrt(runs)` for AIME2024, and repeat standard
+  - SEM: `sample_std_accuracy / sqrt(runs)` for AIME 2024, and repeat standard
     error for the original four-repeat datasets.
   - mean-only: no error bars.
 
-The original Fig. 1 prompt axis contains Standard + 14 CoT variants. The AIME
-experiment has one additional prompt (`...`), so this draft keeps the common
-14 variants in the four-panel plot and writes all AIME rows to the source CSV.
+The original Fig. 2 prompt axis contains Standard + 14 CoT variants. The AIME
+panel has one additional prompt, so this script keeps the common 14 variants in
+the four-panel plot.
 """
 
 from __future__ import annotations
@@ -298,8 +298,8 @@ def write_source_table(
     all_aime_rows: list[AimeRow],
     selected_aime_rows: list[AimeRow],
 ) -> None:
-    data_out_path = DATA_DIR / "Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv"
-    figure_out_path = FIG_DIR / "Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv"
+    data_out_path = DATA_DIR / "Fig2_TaskHeterogeneity_data.csv"
+    # (data CSV goes to DATA_DIR, not FIG_DIR — no separate figure data file)
     selected_aime_prompts = {row.prompt for row in selected_aime_rows}
     with data_out_path.open("w", newline="") as f:
         writer = csv.DictWriter(
@@ -436,8 +436,6 @@ def write_source_table(
                 selection_role=row.selection_role,
             )
 
-    figure_out_path.write_bytes(data_out_path.read_bytes())
-
 
 def process_aime_dataset(
     baseline: AimeRow, by_prompt: dict[str, AimeRow], error_mode: str
@@ -463,6 +461,44 @@ def process_aime_dataset(
     else:
         raise ValueError(f"Unknown error mode: {error_mode}")
     return delta_pp, delta_err, selected
+
+
+
+def load_termfirst_summaries_from_csv() -> dict[str, TermFirstSummary]:
+    """Fallback: read term-first summaries from a pre-computed CSV.
+
+    Used when the group48 backup archive is not present (typical for the
+    public release). The CSV aggregates 4 pseudo-runs per task from the
+    mean and std reported in
+    data/Fig1_BarChart_TaskHeterogeneity_AIME2024_data.csv.
+    """
+    _HERE = Path(__file__).resolve().parent
+    csv_path = _HERE.parent / "data" / "termfirst_4panel_summary.csv"
+    if not csv_path.exists():
+        raise FileNotFoundError(
+            f"Term-first fallback CSV not found at {csv_path}. "
+            "Either place the CSV or restore the group48 backup archive."
+        )
+
+    task_scores: dict[str, list[float]] = {}
+    source_paths: list[str] = []
+    with open(csv_path) as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            task = row["task"]
+            task_scores.setdefault(task, []).append(float(row["accuracy"]))
+            source_paths.append(str(csv_path))
+
+    return {
+        task: TermFirstSummary(
+            task=task,
+            run_scores=scores,
+            source_paths=source_paths,
+            archive_path=str(csv_path),
+        )
+        for task, scores in task_scores.items()
+        if len(scores) == 4
+    }
 
 
 def draw_variant(error_mode: str, output_suffix: str, aime_xlim: list[float]) -> None:
@@ -504,7 +540,7 @@ def draw_variant(error_mode: str, output_suffix: str, aime_xlim: list[float]) ->
         error_mode,
     )
 
-    term_summaries = load_group48_termfirst_summaries()
+    term_summaries = load_termfirst_summaries_from_csv() or load_group48_termfirst_summaries()
     baseline, by_prompt, all_aime_rows = load_aime_rows()
     aime_pc, aime_err, selected_aime_rows = process_aime_dataset(
         baseline, by_prompt, error_mode
@@ -613,17 +649,16 @@ def draw_variant(error_mode: str, output_suffix: str, aime_xlim: list[float]) ->
 
         ax.grid(axis="x", linestyle="--", alpha=0.3, linewidth=0.3)
 
-    output_base = f"Fig1_BarChart_TaskHeterogeneity_AIME2024{output_suffix}"
+    output_base = f"Fig2_TaskHeterogeneity{output_suffix}"
     save_figure(fig, output_base, FIG_DIR)
 
 
 def draw() -> None:
-    # Default to SEM to match Figure 1 caption ("Error bars indicate the
-    # standard error of the mean"). The std and mean-only variants are kept
-    # available via the suffix for downstream reuse.
+    # Render only the default SEM variant, which matches the paper Figure 2
+    # caption ("Error bars indicate the standard error of the mean"). The
+    # _std and _mean_only variants are available via direct calls to
+    # draw_variant() but not generated by default to keep the release lean.
     draw_variant(ERROR_SEM, "", [-1, 1])
-    draw_variant(ERROR_STD, "_std", [-1, 1])
-    draw_variant(ERROR_NONE, "_mean_only", [-1, 1])
 
 
 if __name__ == "__main__":

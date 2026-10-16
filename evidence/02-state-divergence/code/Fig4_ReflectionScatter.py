@@ -6,7 +6,7 @@ Data sources:
   - 8B: DeepSeek-R1-Distill-Llama-8B (same pipeline)
   - 1.5B: DeepSeek-R1-Distill-Qwen-1.5B (vLLM experiment, n=64, max_tokens=4096)
 
-Output: evidence/02-state-divergence/figures/Fig3_Reflection_Scatter.{png,pdf,svg}
+Output: evidence/02-state-divergence/figures/Fig4_ReflectionScatter.{png,jpg,tiff,svg,pdf}
 """
 
 import csv
@@ -28,7 +28,7 @@ from scripts.plot_config import setup_style, save_figure, OKABE_ITO as OI
 # ---- Paths ----
 ROOT = Path(__file__).resolve().parents[1]  # evidence/02-state-divergence/
 FIG_DIR = ROOT / "figures"
-PAPER_FIG_DIR = Path(__file__).resolve().parents[3] / "paper" / "figures"
+# PAPER_FIG_DIR removed for release isolation
 
 ARCHIVE_7B = (
     Path(__file__).resolve().parents[3]
@@ -330,16 +330,11 @@ def draw():
 
     # ---- Save ----
     out_paths = save_figure(
-        fig, "Fig3_Reflection_Scatter", FIG_DIR,
+        fig, "Fig4_ReflectionScatter", FIG_DIR,
         formats=["png", "jpg", "tiff", "svg", "pdf"],
         close=False,
     )
 
-    # Copy to paper/figures/
-    save_figure(
-        fig, "Fig3_Reflection_Scatter", PAPER_FIG_DIR,
-        formats=["png", "jpg", "tiff", "svg", "pdf"],
-    )
 
 
 if __name__ == "__main__":

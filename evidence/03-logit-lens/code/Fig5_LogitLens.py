@@ -21,8 +21,7 @@ DATA_PATH = os.path.normpath(DATA_PATH)
 
 EVIDENCE_FIG_DIR = os.path.join(HERE, "..", "figures")
 EVIDENCE_FIG_DIR = os.path.normpath(EVIDENCE_FIG_DIR)
-PAPER_FIG_DIR = os.path.join(HERE, "..", "..", "..", "paper", "figures")
-PAPER_FIG_DIR = os.path.normpath(PAPER_FIG_DIR)
+# PAPER_FIG_DIR removed for release isolation
 
 CONDITIONS = ["under_thinking", "normal_thinking", "over_thinking", "term_first"]
 LABELS = {
@@ -140,7 +139,6 @@ fig.supylabel("Token probability", fontsize=8.2, x=0.010)
 plt.subplots_adjust(left=0.078, right=0.995, bottom=0.15, top=0.985, wspace=0.14, hspace=0.26)
 
 os.makedirs(EVIDENCE_FIG_DIR, exist_ok=True)
-os.makedirs(PAPER_FIG_DIR, exist_ok=True)
-save_figure(fig, "Fig4_Logit_Lens_4cond", EVIDENCE_FIG_DIR, formats=["png", "jpg", "tiff", "svg", "pdf"])
-save_figure(fig, "Fig4_Logit_Lens_4cond", PAPER_FIG_DIR, formats=["png", "jpg", "tiff", "svg", "pdf"])
+save_figure(fig, "Fig5_LogitLens", EVIDENCE_FIG_DIR, formats=["png", "jpg", "tiff", "svg", "pdf"])
+# PAPER_FIG_DIR write removed for release isolation
 print("Done.")

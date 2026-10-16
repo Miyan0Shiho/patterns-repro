@@ -66,12 +66,14 @@ def draw():
     instructions_full, _ = extract_model(rows, '0.5B')
 
     # Find indices
+    # 'Standard' is the baseline; TERMFIRST_LABEL marks term-first;
+    # all other rows are conventional CoT variants.
     termfirst_idx = None
     standard_indices = []
     for i, instr in enumerate(instructions_full):
         if instr == TERMFIRST_LABEL:
             termfirst_idx = i
-        elif instr not in ['Standard', 'Baseline_direct', TERMFIRST_LABEL]:
+        elif instr != 'Standard':
             standard_indices.append(i)
 
     # Standard prompt labels (for y-axis)
@@ -97,6 +99,8 @@ def draw():
                      alpha=0.7, linewidth=0.5, capsize=1.5)
 
         # Term-first - highlight with distinct color + wider bar
+        if termfirst_idx is None:
+            continue
         tf_pc = pc[termfirst_idx]
         tf_err = err[termfirst_idx]
         # Place term-first at the top of the bars
@@ -135,11 +139,9 @@ def draw():
             ax.yaxis.set_visible(True)
             ax.yaxis.set_tick_params(width=0)
 
-    save_figure(fig, "Fig2_BarChart_ModelScale", FIG_DIR)
+    save_figure(fig, "Fig3_ScalingLaws", FIG_DIR)
 
-    # Also save to paper/figures/
-    PAPER_FIG = HERE.parent.parent.parent / "paper" / "figures"
-    save_figure(fig, "Fig2_BarChart_ModelScale", PAPER_FIG, close=False)
+    # Note: paper/figures/ copy removed for release isolation
     plt.close(fig)
 
 if __name__ == "__main__":
