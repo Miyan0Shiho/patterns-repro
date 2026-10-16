@@ -1,0 +1,67 @@
+{
+  "title": "Reproduction package: prompt prefixes as hidden-state initialization in large language models",
+  "description": "<p>Code and summary data that regenerate every figure and table of a manuscript examining how zero-shot chain-of-thought prompt prefixes shape the hidden-state trajectories of large language models (target journal: <em>Patterns</em>, Cell Press).</p><p>The record contains the analysis and plotting code, the summary data underlying each figure and table, and the per-experiment documentation that maps every claim to its supporting file. Large raw inference artifacts (292 MB OpenCompass logs, the 104 MB term-first group48 archive, 55 MB packaged AIME 2024 runs) and the rendered figures are archived in a separate Zenodo deposit.</p><p>Code is released under the MIT license; data and figures under CC BY 4.0. Third-party benchmark datasets (GSM8K, AIME 2024, MMLU, CMMLU, HumanEval) are not redistributed; only derived summary statistics and prompts are included.</p>",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Liu, Minxuan",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Zhang, Ziyang",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Shao, Yunshu",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Bian, Ca",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Lei, Saihua",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Feng, Chaofan",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Liu, Junhui",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Fang, Sensen",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "You, Yiduo",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Jiang, Haihua",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Hong, Haibo",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China"
+    },
+    {
+      "name": "Hu, Zhiwen",
+      "affiliation": "School of Computer Science and Technology, Zhejiang Gongshang University, Hangzhou 310018, China; Collaborative Innovation Center of Computational Social Science, Zhejiang Gongshang University, Hangzhou 310018, China; Zhejiang Key Laboratory of Big Data and Future E-Commerce Technology, Hangzhou 310018, China"
+    }
+  ],
+  "keywords": [
+    "chain-of-thought",
+    "prompt engineering",
+    "hidden states",
+    "logit lens",
+    "reproducibility",
+    "large language models"
+  ],
+  "language": "eng",
+  "notes": "Compiled with the manuscript submitted to Patterns (Cell Press). Large raw artifacts and rendered figures are in the companion data deposit."
+}
