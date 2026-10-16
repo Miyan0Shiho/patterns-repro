@@ -5,7 +5,7 @@ patterns-repro repository. Tagged commits and the matching Zenodo deposits
 are listed at the bottom. Small typo fixes and doc tweaks are not listed
 here (see `git log` for those).
 
-## v1.0.1 — 2026-10-16
+## v1.0.1 — 2026-10-16  *(tag: [v1.0.1](../../releases/tag/v1.0.1) / commit `ed0baf2`)*
 
 Audited and cleaned the v1.0.0 release against three attack vectors
 identified in an internal review on 2026-10-16:
@@ -85,9 +85,13 @@ A fresh data-companion Zenodo deposit will be created separately.
 
 ---
 
-## v1.0.0 — 2026-10-15 (initial)
+## v1.0.0 — 2026-10-15 (initial)  *(superseded by v1.0.1)*
 
 First tagged public release. Repository structure, all five figure
 generators, full data corpus, Zenodo metadata, and CITATION.cff.
 
-- Zenodo: `10.5281/zenodo.23410782` (concept) / `.23410783` (version)
+**A v1.0.1 audit-fix release followed on 2026-10-16** — see above.
+
+- Zenodo: `10.5281/zenodo.23410782` (concept) / `.23410783` (v1.0.0 version, superseded)
+- A fresh Zenodo deposit for the v1.0.1 commit should be minted with a new
+  version DOI; the concept DOI stays the same

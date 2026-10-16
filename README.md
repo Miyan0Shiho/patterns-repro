@@ -1,5 +1,8 @@
 # Reproduction package for "Contingent Chain-of-Thought effects and causal overclaiming in LLMs"
 
+> **Latest release**: `v1.0.1` (2026-10-16). See [CHANGELOG.md](CHANGELOG.md) for what
+> changed since the v1.0.0 submission. Earlier tag: [`v1.0-submission`](../../releases/tag/v1.0-submission).
+
 Reproduction materials for a manuscript on how zero-shot chain-of-thought prompt
 prefixes shape the hidden-state trajectories of large language models
 (target journal: *Patterns*, Cell Press).
