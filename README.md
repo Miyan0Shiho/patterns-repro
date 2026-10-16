@@ -65,6 +65,12 @@ python3 Fig4_ReflectionScatter.py     # Fig 4
 
 cd evidence/03-logit-lens/code
 python3 Fig5_LogitLens.py             # Fig 5
+
+# Fig 1: rebuild from the SVG source (the schematic is a static SVG; the script
+# in evidence/00-fig1-conceptual/code/ is a one-shot matplotlib regenerator that
+# writes a new PNG/SVG pair if you need to re-render with style changes).
+cd evidence/00-fig1-conceptual/code
+python3 build_concept_image.py        # rebuilds Fig 1
 ```
 
 The scripts locate the project root with `Path(__file__).resolve().parents[3]`
