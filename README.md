@@ -8,8 +8,8 @@ The package contains the code that regenerates every figure from summary tables,
 the summary data behind each figure and table, and a per-experiment README that
 maps each claim to the file that supports it.
 
-Author identities are withheld from this repository's metadata while the
-manuscript is under peer review.
+Maintained by the manuscript's authors at Zhejiang Gongshang University;
+corresponding author: Zhiwen Hu.
 
 ## Layout
 
@@ -69,9 +69,12 @@ extraction.
 
 ## Data and code availability
 
-- Code: this repository, released under the MIT license (`LICENSE`).
-- Data and figures: CC BY 4.0 (`LICENSE-DATA`); large artifacts via Zenodo
-  (DOI recorded in `CITATION.cff` and in the manuscript).
+- Code: this repository, released under the MIT license (`LICENSE`). Archived on
+  Zenodo: <https://doi.org/10.5281/zenodo.23410783> (this version) and
+  <https://doi.org/10.5281/zenodo.23410782> (all versions).
+- Data and figures: CC BY 4.0 (`LICENSE-DATA`); the large raw artifacts and the
+  rendered figures are archived in a companion Zenodo deposit listed in
+  `ZENODO.md`.
 - Third-party benchmark datasets (GSM8K, AIME 2024, MMLU, CMMLU, HumanEval) are
   **not** redistributed here. Only derived summary statistics and prompts are
   included.

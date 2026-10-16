@@ -43,6 +43,13 @@ version: "1.0.0-submission"
 date-released: "2026-10-16"
 license: MIT
 repository-code: "https://github.com/Miyan0Shiho/patterns-repro"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23410783
+    description: "Archived release v1.0-submission (this version)"
+  - type: doi
+    value: 10.5281/zenodo.23410782
+    description: "Concept DOI, resolving to the latest version"
 abstract: >-
   Code and summary data that regenerate every figure and table of a manuscript
   examining how zero-shot chain-of-thought prompt prefixes shape the hidden-state
