@@ -45,10 +45,10 @@ license: MIT
 repository-code: "https://github.com/Miyan0Shiho/patterns-repro"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.23410783
-    description: "Archived release v1.0-submission (this version)"
+    value: 10.5281/zenodo.24104166
+    description: "Archived unified release v1.0.5 (this repository is superseded)"
   - type: doi
-    value: 10.5281/zenodo.23410782
+    value: 10.5281/zenodo.23501242
     description: "Concept DOI, resolving to the latest version"
 abstract: >-
   Code and summary data that regenerate every figure and table of a manuscript

@@ -1,7 +1,11 @@
 # Reproduction package for "Contingent Chain-of-Thought effects and causal overclaiming in LLMs"
 
-> **Latest release**: `v1.0.1` (2026-10-16). See [CHANGELOG.md](CHANGELOG.md) for what
-> changed since the v1.0.0 submission. Earlier tag: [`v1.0-submission`](../../releases/tag/v1.0-submission).
+> **Superseded.** This repository is the pre-unification release (v1.0.1). The current code, data,
+> figures and Lean 4 formalization are maintained in
+> <https://github.com/Computational-social-science/causal_overclaiming_in_LLMs> and archived on Zenodo as
+> v1.0.5: <https://zenodo.org/records/24104166> (concept DOI
+> <https://doi.org/10.5281/zenodo.23501242>, which always resolves to the latest version).
+> The previous Zenodo deposits of this repository have been removed; do not cite them.
 
 Reproduction materials for a manuscript on how zero-shot chain-of-thought prompt
 prefixes shape the hidden-state trajectories of large language models
@@ -113,9 +117,9 @@ extraction.
 
 ## Data and code availability
 
-- Code: this repository, released under the MIT license (`LICENSE`). Archived on
-  Zenodo: <https://doi.org/10.5281/zenodo.23410783> (this version) and
-  <https://doi.org/10.5281/zenodo.23410782> (all versions).
+- Code: the unified repository <https://github.com/Computational-social-science/causal_overclaiming_in_LLMs>,
+  released under the MIT license (`LICENSE`). Archived on Zenodo:
+  <https://doi.org/10.5281/zenodo.24104166> (v1.0.5) and <https://doi.org/10.5281/zenodo.23501242> (all versions).
 - Data and figures: CC BY 4.0 (`LICENSE-DATA`); the large raw artifacts and the
   rendered figures are archived in a companion Zenodo deposit listed in
   `ZENODO.md`.
