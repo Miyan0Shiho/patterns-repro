@@ -118,7 +118,7 @@ extraction.
 
 - Code: the unified repository <https://github.com/Computational-social-science/causal_overclaiming_in_LLMs>,
   released under the MIT license (`LICENSE`). Archived on Zenodo:
-  <https://doi.org/10.5281/zenodo.24104166> (v1.0.5) and <https://doi.org/10.5281/zenodo.23501242> (all versions).
+  <https://doi.org/10.5281/zenodo.24104166> (v1.0.5).
 - Data and figures: CC BY 4.0 (`LICENSE-DATA`); the large raw artifacts and the
   rendered figures are archived in a companion Zenodo deposit listed in
   `ZENODO.md`.
