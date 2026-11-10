@@ -3,7 +3,7 @@
 > **Superseded.** This repository is the pre-unification release (v1.0.1). The current code, data,
 > figures and Lean 4 formalization are maintained in
 > <https://github.com/Computational-social-science/causal_overclaiming_in_LLMs> and archived on Zenodo
-> (concept DOI <https://doi.org/10.5281/zenodo.23501242>, always resolving to the latest version; currently v1.0.5).
+> at <https://doi.org/10.5281/zenodo.24104166> (v1.0.5).
 > The previous Zenodo deposits of this repository have been removed; do not cite them.
 
 Reproduction materials for a manuscript on how zero-shot chain-of-thought prompt
