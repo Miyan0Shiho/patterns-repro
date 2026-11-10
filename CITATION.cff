@@ -47,9 +47,6 @@ identifiers:
   - type: doi
     value: 10.5281/zenodo.24104166
     description: "Archived unified release v1.0.5 (this repository is superseded)"
-  - type: doi
-    value: 10.5281/zenodo.23501242
-    description: "Concept DOI, resolving to the latest version"
 abstract: >-
   Code and summary data that regenerate every figure and table of a manuscript
   examining how zero-shot chain-of-thought prompt prefixes shape the hidden-state
